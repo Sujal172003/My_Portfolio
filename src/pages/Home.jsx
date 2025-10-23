@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiDownload } from "react-icons/fi";
 import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
+import sujalGupta from '../assets/SujalGupta.pdf';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,6 +69,11 @@ useEffect(() => {
     return () => clearInterval(interval);
   }, [texts.length]);
 
+  const handleDownload = ()=>{
+    const link = document.createElement("a");
+    link.href = sujalGupta;
+    link.download = "SujalGuptaCV.pdf";
+  }
 
 
   return (
@@ -96,7 +102,7 @@ useEffect(() => {
           <button className="w-[80%] h-[60px] sm:w-[170px] sm:h-[60px] bg-gradient-to-r from-[#37d0ff] to-[#e229fe] text-white font-semibold px-4 py-2 rounded-xl transition-colors duration-300">
             View My Work
           </button>
-          <button className="w-[80%] h-[60px] bg-transparent flex border gap-2 justify-center items-center sm:w-[170px] sm:h-[60px] border-[#37d0ff] text-[#37d0ff] font-semibold px-4 py-2 rounded-2xl transition-colors duration-300 ">
+          <button onClick={handleDownload} className="w-[80%] h-[60px] bg-transparent flex border gap-2 justify-center items-center sm:w-[170px] sm:h-[60px] border-[#37d0ff] text-[#37d0ff] font-semibold px-4 py-2 rounded-2xl transition-colors duration-300 ">
             <FiDownload size={20}/>Download CV
           </button>
         </div>
