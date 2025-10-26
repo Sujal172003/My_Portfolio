@@ -1,5 +1,11 @@
 import React, { useReducer } from "react";
-import { FiChevronRight, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+} from "react-icons/fi";
 
 const Contact = () => {
   const initialState = {
@@ -46,7 +52,8 @@ const Contact = () => {
       newErrors.email = "Please enter a valid email address.";
     }
 
-    if (!formData.message.trim()) newErrors.message = "Message cannot be empty.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
 
     return newErrors;
   };
@@ -129,69 +136,68 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             className="w-full h-full gap-3 flex flex-col m-2 pb-4 pt-2 justify-center items-center"
-            
           >
             <div className="w-[95%] h-[20%] flex flex-row justify-between">
               <div className="flex flex-col w-[50%] gap-3">
                 <label className="font-bold text-[#ccc]">Name.Required </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your name"
-              className="border-[0.5px] w-[90%] focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] p-2 rounded outline-none transition-all duration-200"
-            />
-            {formData.errors.name && (
-              <p className="text-red-600 text-sm">{formData.errors.name}</p>
-            )}
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className="border-[0.5px] w-[90%] focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] p-2 rounded outline-none transition-all duration-200"
+                />
+                {formData.errors.name && (
+                  <p className="text-red-600 text-sm">{formData.errors.name}</p>
+                )}
               </div>
 
-            <div className="flex flex-col w-[50%] gap-3">
-              <label className="font-bold text-[#ccc]" >Email.Required</label>
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="your@email.com"
-              className="border-[0.5px] w-[90%] p-2 rounded focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] outline-none transition-all duration-200"
-              
-            />
-            {formData.errors.email && (
-              <p className="text-red-600 text-sm">{formData.errors.email}</p>
-            )}
+              <div className="flex flex-col w-[50%] gap-3">
+                <label className="font-bold text-[#ccc]">Email.Required</label>
+                <input
+                  type="text"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  className="border-[0.5px] w-[90%] p-2 rounded focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] outline-none transition-all duration-200"
+                />
+                {formData.errors.email && (
+                  <p className="text-red-600 text-sm">
+                    {formData.errors.email}
+                  </p>
+                )}
+              </div>
             </div>
-            </div>
-
 
             <div className="w-[95%] h-[35%] gap-3 flex flex-col">
               <label className="font-bold text-[#ccc]">Subject.Optional</label>
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder="Subject"
-              className="w-[100%] h-[80%] border-[0.5px] border-white focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] rounded outline-none transition-all duration-200"
-              
-            />
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject"
+                className="w-[100%] h-[80%] border-[0.5px] border-white focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] rounded outline-none transition-all duration-200"
+              />
             </div>
 
             <div className="w-[95%] h-[35%] gap-3 flex flex-col">
-              <label className="font-bold text-[#ccc]" >Message.Required</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Write your message"
-              rows="4"
-              className="w-[100%] h-[90%] border-[0.5px] border-white focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] rounded outline-none transition-all duration-200"
-              
-            />
-            {formData.errors.message && (
-              <p className="text-red-600 text-sm">{formData.errors.message}</p>
-            )}
+              <label className="font-bold text-[#ccc]">Message.Required</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Write your message"
+                rows="4"
+                className="w-[100%] h-[90%] border-[0.5px] border-white focus:border-[#00b7ff] focus:ring focus:ring-[#00b7ff] rounded outline-none transition-all duration-200"
+              />
+              {formData.errors.message && (
+                <p className="text-red-600 text-sm">
+                  {formData.errors.message}
+                </p>
+              )}
             </div>
 
             <button
@@ -201,6 +207,27 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+        </div>
+      </div>
+      <div className="w-full h-[22%] justify-center items-center flex flex-col">
+        <div className="text-5xl sm:text-6xl font-bold flex text-transparent bg-clip-text bg-gradient-to-r from-[#37d0ff] via-[#cb00ef] to-[#fe29a9]">
+          <div>{`<`}</div>THANKS
+          <div className="text-transparent bg-clip-text bg-[#37d0ff]">{`/>`}</div>
+        </div>
+        <div className="text-[#b8b8b8e4]">for visiting!</div>
+        <div className="flex mt-10 sm:mt-4 flex-row justify-center items-center">
+          <div className="text-2xl sm:text-3xl font-bold flex text-transparent bg-clip-text bg-gradient-to-r from-[#37d0ff] via-[#cb00ef] to-[#fe29a9]">
+            <div>{`<`}</div>Code
+            <div className="text-transparent bg-clip-text bg-[#37d0ff]">{`/>`}</div>
+          </div>
+          <div className="text-2xl sm:text-3xl font-bold flex text-transparent bg-clip-text bg-gradient-to-r from-[#37d0ff] via-[#cb00ef] to-[#fe29a9]">
+            <div>{`<`}</div>Create
+            <div className="text-transparent bg-clip-text bg-[#37d0ff]">{`/>`}</div>
+          </div>
+          <div className="text-2xl sm:text-3xl font-bold flex text-transparent bg-clip-text bg-gradient-to-r from-[#37d0ff] via-[#cb00ef] to-[#fe29a9]">
+            <div>{`<`}</div>Collabrate
+            <div className="text-transparent bg-clip-text bg-[#37d0ff]">{`/>`}</div>
+          </div>
         </div>
       </div>
     </div>
