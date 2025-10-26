@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiDownload } from "react-icons/fi";
 import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
-import sujalGupta from "../assets/SujalGupta.pdf";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,12 +63,13 @@ const Home = ({ scrollToSection, projectsRef }) => {
 
   const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = sujalGupta;
+  link.href = "/SujalGupta.pdf"; // no import needed
   link.setAttribute("download", "SujalGuptaCV.pdf");
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
+
 
 
   return (
