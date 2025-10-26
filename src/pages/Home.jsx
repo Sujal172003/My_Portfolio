@@ -63,12 +63,14 @@ const Home = ({ scrollToSection, projectsRef }) => {
   }, [texts.length]);
 
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = sujalGupta;
-    link.download = "SujalGuptaCV.pdf";
-    link.click();
-    document.body.removeChild(link);
-  };
+  const link = document.createElement("a");
+  link.href = sujalGupta;
+  link.setAttribute("download", "SujalGuptaCV.pdf");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <div className="flex flex-col sm:flex-row mt-[100px] justify-center items-center sm:mt-0 sm:justify-end w-screen h-[140vh] ">
