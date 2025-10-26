@@ -60,7 +60,7 @@ function App() {
       </div>
 
       <section id="home" ref={homeRef}>
-        <Home />
+        <Home scrollToSection={scrollToSection} projectsRef={projectsRef} />
       </section>
       <section id="about" ref={aboutRef}>
         <About />

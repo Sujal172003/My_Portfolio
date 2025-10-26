@@ -7,7 +7,7 @@ import sujalGupta from "../assets/SujalGupta.pdf";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Home = () => {
+const Home = ({ scrollToSection, projectsRef }) => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
@@ -93,7 +93,7 @@ const Home = () => {
         </p>
 
         <div className="flex flex-col w-full sm:w-max sm:flex-row justify-center items-center gap-6 ml-0 sm:ml-20 mt-4">
-          <button className="w-[80%] h-[60px] sm:w-[170px] sm:h-[60px] bg-gradient-to-r from-[#37d0ff] to-[#e229fe] text-white font-semibold px-4 py-2 rounded-xl transition-colors duration-300">
+          <button onClick={() => scrollToSection(projectsRef)} className="w-[80%] h-[60px] sm:w-[170px] sm:h-[60px] bg-gradient-to-r from-[#37d0ff] to-[#e229fe] text-white font-semibold px-4 py-2 rounded-xl transition-colors duration-300">
             View My Work
           </button>
           <button

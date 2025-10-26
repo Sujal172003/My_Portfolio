@@ -111,7 +111,7 @@ const Contact = () => {
           </div>
 
           <div className="w-[90%] border border-[#2984a5d3] flex flex-row items-center p-3 gap-3 rounded-xl">
-            <div className="flex items-center justify-center rounded-xl bg-gradient-to-r from-[#37d0ff] to-[#e229fe] p-2">
+            <div className="flex items-center justify-center rounded-xl bg-gradient-to-r from-[#79d8f6] to-[#eb6bff] p-2">
               <FiPhone size={30} color="#000" />
             </div>
             <div>
