@@ -63,12 +63,13 @@ const Home = ({ scrollToSection, projectsRef }) => {
 
   const handleDownload = () => {
   const link = document.createElement("a");
-  link.href = "/SujalGupta.pdf"; // no import needed
-  link.setAttribute("download", "SujalGuptaCV.pdf");
+  link.href = "/SujalGupta.pdf"; // must match the file name in /public
+  link.download = "SujalGuptaCV.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
+
 
 
 
